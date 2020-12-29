@@ -25,9 +25,9 @@ export class App
 
     click(e)
     {
-        const x = Math.floor((e.clientX - e.target.offsetLeft) / window.app.resolution);
-        const y = Math.floor((e.clientY - e.target.offsetTop) / window.app.resolution);
-        window.app.swap(x,y);
+        const x = Math.floor((e.clientX - e.target.offsetLeft) / app.resolution);
+        const y = Math.floor((e.clientY - e.target.offsetTop) / app.resolution);
+        app.swap(x,y);
     }
 
     ramdomize()
@@ -37,8 +37,8 @@ export class App
 
     draw()
     {
-        this.game.forEachCell((i,j,s) => {
-                if (s === 1)
+        this.game.forEachCell((i,j,status) => {
+                if (status === 1)
                     this.paint(i, j, this.resolution);
         });
     }
