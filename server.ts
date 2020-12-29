@@ -25,7 +25,7 @@ listenAndServe({ port: 8000 }, async (req) => {
     req.respond({
       status: 200,
       headers: new Headers({
-        "content-type": "test/javascript"
+        "content-type": "text/javascript"
       }),
       body: await Deno.open(`.${req.url}`)
     });
